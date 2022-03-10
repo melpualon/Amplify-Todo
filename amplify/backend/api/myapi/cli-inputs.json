@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "myapi",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Users\\Mel-XPERTO\\Desktop\\myamplifyproject1\\amplify\\backend\\api\\myapi\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 7,
+      "apiKeyExpirationDate": "2022-03-17T04:01:43.872Z",
+      "keyDescription": "demo"
+    }
+  }
+}
