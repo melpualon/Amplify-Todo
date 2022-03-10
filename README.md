@@ -1,5 +1,8 @@
 # myamplifyproject1
 
+live project: 
+https://dev.d1ql73nu3i2c4i.amplifyapp.com/
+
 ## Project setup
 ```
 npm install
