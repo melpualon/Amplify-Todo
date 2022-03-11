@@ -3,6 +3,7 @@
     <h1>Todo App</h1>
     <input type="text" v-model="name" placeholder="Todo name">
     <input type="text" v-model="description" placeholder="Todo description">
+    <h1 v-if="message">{{ message }}</h1>
     <button @click="createTodo">Create Todo</button>
     <div v-for="todo in todos" :key="todo.id">
       <h3>{{ todo.name }}</h3>
@@ -30,14 +31,17 @@ export default {
     return {
       name: '',
       description: '',
-      todos: []
+      todos: [],
+      message: ''
     }
   },
   methods: {
     async createTodo() {
       const { name, description } = this
 
-      if(!name || !description) return
+      if(!name || !description) {
+        this.showMessage('Please fill all fields')
+      }
 
       const todo = { name, description }
       await API.graphql({
@@ -52,6 +56,11 @@ export default {
         query: listTodos
       });
       this.todos = todos.data.listTodos.items
+    },
+    async showMessage() {
+      setTimeout((message) => {
+        this.message = message
+      }, 3000)
     },
 
     subscribe() {
